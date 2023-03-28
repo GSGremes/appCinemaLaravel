@@ -10,6 +10,6 @@ class cadastroFuncionario extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nomefun', 'emailfun','whatsappfun', 'cpffun', 'senhafun'
+        'emailfun', 'nomefun','senhafun', 'whatsappfun', 'cpffun'
     ];
 }
