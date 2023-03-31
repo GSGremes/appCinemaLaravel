@@ -3,6 +3,7 @@
 @section('content') 
 
 <form>
+@csrf
             <div class="mb-3 form-check">
                 <label for="filmeInput" class="form-label">Filme:</label>
                 <input type="text" name="filme" class="form-control" id="filmeInput" >

@@ -3,6 +3,7 @@
 @section('content') 
 
 <form class="row g-3">
+@csrf
     <div class="col-md-6">
       <label for="inputSala" class="form-label">Sala</label>
       <input type="text" class="form-control" id="inputSala">
