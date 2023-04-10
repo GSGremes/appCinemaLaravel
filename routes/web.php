@@ -3,8 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cadastroFilme;
 use App\Http\Controllers\cadastroFuncionario;
-use App\Http\Controllers\cadastroSala;
-
+use App\Http\Controllers\cadastroPoltrona;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +21,10 @@ Route::get('/', function () {
 
 Route::get('/cadastro-filme', [cadastroFilme::class,'buscaCadastroFilme'])->name('buscar-cadastro-filme');
 
-Route::post('/cadastro-filme', [cadastroFilme::class,'cadastrarFilme'])->name('cadastro-filme');
+Route::post('/cadastro-filme', [cadastroFilme::class,'CadastrarFilme'])->name('cadastro-filme');
 
-Route::get('/cadastro-funcionario',[cadastroFuncionario::class,'buscaCadastroFuncionario']);
+Route::get('/cadastro-funcionario', [cadastroFuncionario::class,'buscaCadastroFuncionario'])->name('buscar-cadastro-funcionario');
 
-Route::get('/cadastro-sala',[cadastroSala::class,'buscaCadastroSala'])->name('buscar-cadastro-funcionario');
+Route::post('/cadastro-funcionario', [cadastroFuncionario::class,'cadastrarFuncionario'])->name('cadastro-funcionario');
 
-Route::post('/cadastro-funcionario',[cadastroFuncionario::class,'cadastrarFuncionario'])->name('cadastro-funcionario');
+Route::get('/cadastro-poltrona', [cadastroPoltrona::class,'buscaCadastroPoltrona']);

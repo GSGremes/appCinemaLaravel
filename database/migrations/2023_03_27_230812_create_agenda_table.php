@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('funcionarios', function (Blueprint $table) {
+        Schema::create('agenda', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('emailfun');
-            $table->string('nomefun');
-            $table->string('senhafun');
-            $table->string('whatsappfun');
-            $table->string('cpffun');
-
+            $table->string('compromisso');
+            $table->longText('descricao');
+            $table->date('datainicio');
         });
     }
 
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('funcionarios');
+        Schema::dropIfExists('agenda');
     }
 };

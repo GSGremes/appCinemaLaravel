@@ -8,20 +8,21 @@ use App\Models\Funcionario;
 class cadastroFuncionario extends Controller
 {
     public function buscaCadastroFuncionario(){
-        return View('cadastroFuncionario');
+        return View('cadastroFuncionario');  
     }
-
+        
     public function cadastrarFuncionario(Request $request){
         $dadosfuncionarios = $request->validate(
-            [
-                'emailfun'=>'string|required',
-                'nomefun'=>'string|required',
-                'senhafun'=>'string|required',
-                'whatsappfun'=>'string|required',
-                'cpffun'=>'string|required'
-            ]
-            );
-        Funcionario::create($dadosfuncionarios);
-        return Redirect::route('cadastro-funcionario');
+        [
+            'emailFun' => 'string|required',
+            'nomeFun' => 'string|required',
+            'senhaFun' => 'string|required',
+            'whatssappFun' => 'string|required',
+            'cpfFun' => 'string|required',
+        ]
+    );
+    Funcionario::create($dadosfuncionarios);
+    return Redirect::route('cadastro-funcionario');
     }
+      
 }
