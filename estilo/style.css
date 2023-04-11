@@ -1,0 +1,119 @@
+html, body {
+    overflow-x: hidden;
+   }
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+}
+
+h3{
+    font-family: 'Poppins', sans-serif;
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+}
+
+.mainAcervo{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+
+}
+
+.acervoMain{
+    width: 100%;
+    align-items: center;
+}
+
+.acervoMain h3{
+    margin-left: 31.5vw;
+}
+
+.filtro{
+    background-color: grey;
+    width:20%;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+
+.hfiltro{
+    text-align:left;
+}
+
+.banners{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.foto-entrar a{
+    margin-left: 45%;
+    width: 10rem;
+    border-radius: 30px;
+}
+
+ .col-auto button{
+    width: 10rem;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgba(226,215,107,1) 0%, rgba(149,191,120,1) 47%, rgba(119,139,208,1) 100%);
+}
+
+.col-sm button{
+    width: 75%;
+    height: 3.2rem;
+}
+
+.gradient{
+    margin-top: 5rem;
+    height: 20rem;
+    background: linear-gradient(90deg, rgba(226,215,107,1) 0%, rgba(149,191,120,1) 47%, rgba(119,139,208,1) 100%);
+}
+
+.poster{
+    width: 100%;
+    height: 35rem;
+    border-radius: 50px;
+    padding: 30px;
+}
+
+.logoLogin{   
+    width:7%;
+    margin-left: 45%;
+    margin-top: 10%;
+}
+
+.login{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+.boxLogin{
+    margin-top:50px;
+    width: 400px;
+    height: 65rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 4px grey;
+}
+
+.mb-3{
+    padding:10px;
+}
+
+
+
+
+
