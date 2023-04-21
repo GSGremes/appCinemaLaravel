@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\filmeController;
-use App\Http\Controllers\cadastroFuncionario;
-use App\Http\Controllers\cadastroPoltrona;
+use App\Http\Controllers\funcionarioController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,5 +26,5 @@ Route::get('/cadastro-funcionario', [funcionarioController::class,'buscaCadastro
 Route::post('/cadastro-funcionario', [funcionarioController::class,'cadastrarFuncionario'])->name('cadastro-funcionario');
 Route::get('/gerenciar-funcionario', [funcionarioController::class,'buscarFuncionario'])->name('gerenciar-funcionario');
 
-Route::get('/cadastro-poltrona', [cadastroPoltrona::class,'buscaCadastroPoltrona']);
+
 

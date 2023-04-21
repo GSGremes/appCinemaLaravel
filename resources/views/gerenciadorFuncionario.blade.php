@@ -3,14 +3,18 @@
 @section('content')
 
 <div class="container mt-5">
+  <form method="get" action="{{route('gerenciar-funcionario')}}">
 <div class="mb-3 row">
-   </div>
   <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Pesquisa</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Por Nome" id="inputPassword">
+    <label for="inputPesquisar" class="col-sm-2 col-form-label">Pesquisar:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="nomeFun" id="inputPesquisar" placeholder="Digite o nome do funcionário">
+    </div>
+    <div class="col-sm-2">
+    <button type="submit" class="btn btn-outline-success">Pesquisar</button>
     </div>
   </div>
+  </form>
 
 <table class="table table-success table-hover">
   <thead>
@@ -23,14 +27,15 @@
     </tr>
   </thead>
   <tbody>
+    @foreach($dadosfuncionario as $dadosfuncionarios)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Ot@to</td>
-      <td>X</td>
+      <th scope="row">{{$dadosfuncionarios->id}}</th>
+      <td>{{$dadosfuncionarios->nomeFun}}</td>
+      <td>{{$dadosfuncionarios->emailFun}}</td>
+      <td>x</td>
       <td>x</td>
     </tr>
-   
+   @endforeach
   </tbody>
 </table>
 
