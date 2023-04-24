@@ -7,7 +7,7 @@ use App\Models\Funcionario;
 
 class funcionarioController extends Controller
 {
-    public function buscaCadastroFuncionario(){
+    public function buscarCadastroFuncionario(){
         return View('cadastroFuncionario');  
     }
         
@@ -20,28 +20,27 @@ class funcionarioController extends Controller
             'whatssappFun' => 'string|required',
             'cpfFun' => 'string|required',
         ]
-    );
+    );  
     Funcionario::create($dadosfuncionarios);
-    return Redirect::route('cadastro-funcionario');
+    return Redirect::route('home');
     }
     
-    public function buscarFuncionario(){
-        return view('gerenciadorFuncionario');
-    }
+    // public function buscarFuncionario(){
+    //     return view('gerenciadorFuncionario',['dadosfuncionario']);
+    // }
 
     public function MostrarGerenciadorFuncionario(Request $request){
-        $dadosfuncionarios = Funcionario::all();
-        dd($dadosfuncionarios);
-        /*
+        $dadosfuncionarios = Funcionario::all(); 
+        // dd($dadosfuncionarios);
+
         $dadosfuncionarios = Funcionario::query();
-        $dadosfuncionarios->when($request->nomefun,function($query,$nomefuncionario){
-            $query->where('nomefun','like','%'.$nomefuncionario.'%');
+        $dadosfuncionarios->when ($request->nomeFun,function($query,$nomefuncionario){
+            $query->where('nomeFun','like','%'.$nomefuncionario.'%');
         });
 
         $dadosfuncionarios = $dadosfuncionarios->get();
 
-        return view('gerenciadorFuncionario');
-        */
+        return view('gerenciadorFuncionario',['dadosfuncionario'=>$dadosfuncionarios]);
     }
     
 }
