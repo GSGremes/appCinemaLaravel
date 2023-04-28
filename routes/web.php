@@ -26,5 +26,8 @@ Route::get('/cadastro-funcionario', [funcionarioController::class,'buscarCadastr
 Route::post('/cadastro-funcionario', [funcionarioController::class,'cadastrarFuncionario'])->name('cadastro-funcionario');
 Route::get('/gerenciar-funcionario', [funcionarioController::class,'MostrarGerenciadorFuncionario'])->name('gerenciar-funcionario');
 
+Route::delete('/gerenciar-funcionario/{registroFuncionario}',[funcionarioController::class,'ApagarFuncionario'])->name('apagar-funcionario');
 
+Route::get('/alterar-funcionario/{registroFuncionario}',[funcionarioController::class,'MostrarRegistroFuncionario'])->name('mostrar-funcionario');
+Route::put('/gerenciar-funcionario/{registroFuncionario}',[funcionarioController::class,'AlterarBancoFuncionario'])->name('alterar-banco-funcionario');
 

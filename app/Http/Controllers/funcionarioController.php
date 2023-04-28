@@ -18,7 +18,7 @@ class funcionarioController extends Controller
             'nomeFun' => 'string|required',
             'senhaFun' => 'string|required',
             'whatssappFun' => 'string|required',
-            'cpfFun' => 'string|required',
+            'cpfFun' => 'string|required'
         ]
     );  
     Funcionario::create($dadosfuncionarios);
@@ -43,6 +43,30 @@ class funcionarioController extends Controller
         return view('gerenciadorFuncionario',['dadosfuncionario'=>$dadosfuncionarios]);
     }
     
+    public function ApagarFuncionario(Funcionario $registrosFuncionarios){
+        $registrosFuncionarios->delete();
+
+        return Redirect::route('gerenciar-funcionario');
+    }
+
+    public function MostrarRegistrosFuncionario(Funcionario $registrosFuncionarios){
+        return view('xxxx',['registrosFuncionarios' => $registrosFuncionarios]);
+    }
+
+    public function AlterarBancoFuncionario(Funcionario $registrosFuncionarios, Request $request){
+        $dadosfuncionarios = $request->validate([
+            'emailFun' => 'string|required',
+            'nomeFun' => 'string|required',
+            'senhaFun' => 'string|required',
+            'whatssappFun' => 'string|required',
+            'cpfFun' => 'string|required'
+        ]);
+        
+        $registrosFuncionarios->fill($dadosfuncionarios);
+        $registrosFuncionarios->save();
+
+        return Redirect::route('gerenciar-funcionario');
+    }
 }
 
 
