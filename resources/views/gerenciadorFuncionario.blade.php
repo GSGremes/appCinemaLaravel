@@ -34,17 +34,37 @@
       <td>{{$dadosfuncionarios->emailFun}}</td>
       <td><a href="{{route('mostrar-funcionario',$dadosfuncionarios->id)}}">Alterar</a></td>
       <td>
-        <form action="{{route('apagar-funcionario',$dadosfuncionarios->id)}}" method="post">
-          @method('delete')
-          @csrf
-          <button type="submit" class="btn btn-danger"> Excluir </button>
-        </form>
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#AvisoExcluir">
+        Excluir
+      </button>
       </td>
+      <div class="modal" id="AvisoExcluir" tabindex="-1" >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Excluir</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Deseja realmente excluir esse registro?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <form action="{{route('apagar-funcionario',$dadosfuncionarios->id)}}" method="post">
+                  @method('delete')
+                  @csrf
+                  <button type="submit" class="btn btn-danger"> Excluir </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
     </tr>
    @endforeach
   </tbody>
 </table>
 
-</div>
+
 
 @endsection
