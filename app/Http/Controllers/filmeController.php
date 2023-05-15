@@ -32,4 +32,18 @@ class filmeController extends Controller
     Filme::create($dadosFilmes);
     return Redirect::route('cadastro-filme');
     }
+
+    public function MostrarGerenciadorFilme(Request $request){
+        $dadosFilmes = Filme::all(); 
+        // dd($dadosfilmes);
+
+        $dadosFilmes = Filme::query();
+        $dadosFilmes->when ($request->nomeFun,function($query,$nomefuncionario){
+            $query->where('nomeFilme','like','%'.$nomefilme.'%');
+        });
+
+        $dadosFilmes = $dadosFilmes->get();
+
+        return view('gerenciadorFilme',['dadosfilme'=>$dadosFilmes]);
+    }
 }
